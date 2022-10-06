@@ -1,13 +1,27 @@
 package hu.petrik.sokszogoop;
 
-public class Sokszog {
+public abstract class Sokszog {
+
+    public void setA(double a) {
+        this.a = a;
+    }
+
     private double a;
 
-    public Sokszog(double a){
+    public Sokszog(double a) {
         this.a = a;
     }
 
     public double getA(){
         return a;
+    }
+
+    public abstract double getKerulet();
+
+    public abstract double getTerulet();
+
+    @Override
+    public String toString(){
+        return String.format("K = %-10.3f T = %-10.3f %s", this.getKerulet(), this.getTerulet());
     }
 }
